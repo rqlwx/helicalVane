@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN">
+<html>
+  <head>
+    <title>螺旋叶片参数计算 V1.0</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+    <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.easyui.min.js"></script>
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="renderer" content="ie-stand">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  <style>
+    body{background-color: white}
+    .left{float:left;width:50%;background-color: white}
+    .right{float:right;width:50%;background-color: white}
+    .content{margin-left: 12px;}
+    dt,dd{float: left;}
+  </style>
+
+  </head>
+  
+  <body>
+<!-- 标题 -->
+  <div style="text-align: center; width:75%;  margin:0 auto; text-align:center;background-color:white;font-family:"Microsoft YaHei"; ">
+    <h2 style="padding: 20px 0;   font-family: arial; font-size: 30px; text-align: center;">螺旋叶片参数计算</h2>
+  </div>
+  <!-- 左侧图片 -->
+  <div class="mainDiv">
+  
+      <div class="left">
+          <div><i><img src="images/methodOfHelicalVane.jpg" width="440px" height="496px"></i><br>
+          版本：V1.0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开发：rqlwx<br>
+          请联系我：<a href="http://mail.163.com/" target="_Blank">rqlwx@163.com</a><br>
+          说明：未经作者允许，禁止使用！
+          </div>
+      </div>
+    <!-- 右侧输入 -->
+    <div class="right">
+      <h4>请输入数值(单位：毫米)</h4><br>
+        俯视图外圆直径D：<input type="text" id="bigD" onblur="checkNumber(this)" /><p>
+        俯视图内圆直径d：&nbsp;<input type="text" id="smallD" onblur="checkNumber(this)" /><p>
+        旋高P：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="helicalH"onblur="checkNumber(this)" /><p>
+      <input type="button" value="计算" onclick="calculate()" style=" width:60%;height:5%; margin:0 auto;" ><p><br>
+      <h4>结果(精确到小数点后三位)</h4><br>
+      <dl class="result-block result-item">
+        <dt class="result-item name"> 外螺旋线实长L(毫米)：</dt>
+        <dd class="result-item value" id="outterSpiralLine" style="color:red" ></dd><br><br>
+        <dt class="result-item name"> 内螺旋线实长l(毫米)：</dt>
+        <dd class="result-item value" id="innerSpiralLine" style="color:red" ></dd><br><br>
+        <dt class="result-item name"> 叶片高h(毫米)：</dt>
+        <dd class="result-item value" id="vaneHeight" style="color:red" ></dd><br><br>
+        <dt class="result-item name"> 叶片展开里口半径r(毫米)：</dt>
+        <dd class="result-item value" id="vaneSpanRadius" style="color:red" ></dd><br><br>
+        <dt class="result-item name"> 切口角度α(度)：</dt>
+        <dd class="result-item value" id="notchAngle" style="color:red" ></dd><br><br>
+        <dt class="result-item name"> 切口旋长C(毫米)：</dt>
+        <dd class="result-item value" id="incisionLength" style="color:red" ></dd><br><br>
+      </dl>
+    </div>
+    
+  </div>
+  </body>
+  <script type="text/javascript" src="jquery/main.js"></script>
+</html>
